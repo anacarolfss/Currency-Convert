@@ -2,13 +2,15 @@ const buttonConvert=document.querySelector("#button-convert")
 const currencySelect= document.querySelector("#input-select-to-convert")
 
 
-function convertValues(){
+function convertValues(){ //logica da mudança do "converter PARA"
     const inputValue= document.querySelector("#input-currency").value
     const valueToConvert=document.querySelector("#currency-value-to-convert")
     const valueConverted=document.querySelector("#currency-value-converted") //dolar-euro
 
-    const dolarToday= 5.6
+    const dolarToday= 5.58
     const euroToday= 6.2
+    const libraEtoday= 7.3
+    const clpToday= 168.99
 
     if(currencySelect.value== "dolar"){
         valueConverted.innerHTML= new Intl.NumberFormat("en-US" , {
@@ -30,9 +32,20 @@ function convertValues(){
         currency: "BRL"
     }).format (inputValue)
 
+    if(currencySelect.value=="libra"){
+        valueConverted.innerHTML=new Intl.NumberFormat("en-GB" , {
+            style: "currency",
+            currency: "GBP"
+        }).format (inputValue/libraEtoday)
+
+
+    }
+
+
 }
 
-function changeCurrency(){
+
+function changeCurrency(){ //muda a foto do projeto
     const currencyName= document.getElementById("currency-name")
     const currencyImgConverted= document.getElementById("img-converted")
     
@@ -46,6 +59,12 @@ function changeCurrency(){
         currencyName.innerHTML= "EURO"
         currencyImgConverted.src= "./assets/euro-logo.png"
     }
+
+    if(currencySelect.value=="libra"){
+        currencyName.innerHTML= "LIBRA ESTERLINA"
+        currencyImgConverted.src= "./assets/libra-logo.png"
+    }
+
 
     convertValues() 
 }
