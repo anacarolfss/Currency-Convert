@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Currency Investment</title>
+</head>
+
+<body>
+    <div id="container-principal">
+        <header>
+            <img id="img-logo" src="./assets/logo-currency.png" alt="logo-currency-investment">
+        </header>
+        <main id="container-conversao">
+
+            <label>CONVERTER <b>DE: </b>
+                <select class="input-select">
+                    <option>R$ Real Brasileiro </option>
+                </select>
+
+            </label>
+
+            <!-- <img src="./assets/vetor-seta.png" alt="seta-png"> -->
+
+            <label>CONVERTER <b>PARA: </b>
+                <select id="input-select-to-convert" class="input-select">
+                    <option value="dolar"> US$ Dólar Americano </option>
+                    <option value="euro">«€» Euro </option>
+                </select>
+            </label>
+
+            <label>
+                VALOR:
+                <input id="input-currency" class="input-select" placeholder="R$10.000,00">
+            </label>
+
+            <button id="button-convert">CONVERTER</button>
+
+            <section class="value-convert">
+                <img src="./assets/brasil 2.png" alt="logo-real">
+                <p>REAL BRASILEIRO</p>
+                <p id="currency-value-to-convert" ><b>R$0.00</b></p>
+
+            </section>
+
+            <section class="value-convert">
+                <img id="img-converted" src="./assets/dolar-logo.png" alt="logo-dolar">
+                <p id="currency-name">DÓLAR AMERICANO</p>
+                <p id="currency-value-converted"><b>US$0.00</b></p>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>
